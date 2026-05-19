@@ -285,7 +285,7 @@ function Expedientes() {
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <FileText size={14} style={{ color: '#719DBE' }} />
-          <h2 className="text-sm font-semibold" style={{ color: '#111827' }}>Expedientes</h2>
+          <h2 className="text-sm font-semibold" style={{ color: '#111827' }}>Processos que Sigo</h2>
         </div>
         <button className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.5)', border: '1px solid rgba(255,255,255,0.7)' }}>
           <ArrowUpRight size={13} style={{ color: '#9CA3AF' }} />
@@ -308,6 +308,7 @@ function Expedientes() {
           </div>
         ))}
       </div>
+      <div className="text-[10px] mt-2 font-medium" style={{ color: '#D97706' }}>1 processo(s) com mudança de status</div>
     </div>
   );
 }
@@ -365,8 +366,28 @@ function PainelPfizer() {
         ))}
       </div>
 
-      <div className="text-[10px] font-medium mb-1.5" style={{ color: '#6B7280' }}>Gestores</div>
-      <div className="text-xs" style={{ color: '#111827' }}>Claudia Scordamaglia, Juliana Rocha</div>
+      <div className="text-[10px] font-medium mb-1.5" style={{ color: '#6B7280' }}>Gestores Regulatórios</div>
+      <div className="text-xs mb-3" style={{ color: '#111827' }}>Claudia Scordamaglia · Juliana Rocha</div>
+
+      <div className="text-[10px] font-medium mb-1.5" style={{ color: '#6B7280' }}>Renovações de Registro em 2026</div>
+      <div className="flex flex-col gap-1.5">
+        {[
+          { produto: 'Produto A', status: '6 meses', processo: '25351.001234/2026-01', exp: '12/03/2026' },
+          { produto: 'Produto B', status: 'Ok', processo: '25351.005678/2026-02', exp: '04/08/2026' },
+          { produto: 'Produto C', status: 'Urgente', processo: '25351.009012/2026-03', exp: '15/01/2026' },
+        ].map(r => (
+          <div key={r.processo} className="flex items-center justify-between rounded-lg p-2" style={{ background: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.6)' }}>
+            <div>
+              <div className="text-[10px] font-semibold" style={{ color: '#111827' }}>{r.produto}</div>
+              <div className="text-[9px]" style={{ color: '#9CA3AF' }}>{r.processo}</div>
+            </div>
+            <div className="text-right">
+              <span className="text-[9px] font-bold" style={{ color: r.status === 'Urgente' ? '#c53030' : r.status === 'Ok' ? '#059669' : '#D97706' }}>{r.status}</span>
+              <div className="text-[9px]" style={{ color: '#9CA3AF' }}>Exp: {r.exp}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
