@@ -30,27 +30,27 @@ const highlights: CellHighlight[] = [
 ];
 
 const variantColors: Record<string, string> = {
-  blue: 'rgba(113,157,190,0.85)',
-  yellow: 'rgba(192,212,226,0.92)',
-  teal: 'rgba(0,0,0,0.75)',
+  blue: 'rgba(47,91,224,0.85)',
+  yellow: 'rgba(226,232,48,0.85)',
+  teal: 'rgba(64,141,153,0.82)',
 };
 
 const variantText: Record<string, string> = {
   blue: '#fff',
-  yellow: '#000000',
+  yellow: '#111827',
   teal: '#fff',
 };
 
 export default function TasksSchedule() {
   return (
     <div
-      className="relative rounded-[28px] p-5 overflow-hidden flex-1"
+      className="relative rounded-[22px] p-4 overflow-hidden flex-1 glass-panel"
       style={{
-        background: 'rgba(255,255,255,0.28)',
-        backdropFilter: 'blur(22px)',
-        WebkitBackdropFilter: 'blur(22px)',
-        border: '1px solid rgba(255,255,255,0.45)',
-        boxShadow: '0 20px 60px rgba(31,41,55,0.08)',
+        background: 'rgba(255,255,255,0.30)',
+        backdropFilter: 'blur(32px) saturate(140%)',
+        WebkitBackdropFilter: 'blur(32px) saturate(140%)',
+        border: '1px solid rgba(255,255,255,0.58)',
+        boxShadow: '0 24px 70px rgba(38,66,88,0.09), inset 0 1px 0 rgba(255,255,255,0.70), inset 0 -1px 0 rgba(255,255,255,0.20)',
       }}
     >
       <div className="flex items-center justify-between mb-4">

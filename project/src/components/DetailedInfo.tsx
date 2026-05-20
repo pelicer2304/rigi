@@ -21,7 +21,7 @@ function SmallBtn({ children }: { children: React.ReactNode }) {
 
 export default function DetailedInfo() {
   return (
-    <div className="relative rounded-[28px] p-5 overflow-hidden" style={{ background: 'rgba(255,255,255,0.28)', backdropFilter: 'blur(22px)', border: '1px solid rgba(255,255,255,0.5)', boxShadow: '0 20px 60px rgba(31,41,55,0.08)' }}>
+    <div className="relative rounded-[22px] p-4 overflow-hidden glass-panel" style={{ background: 'rgba(255,255,255,0.30)', backdropFilter: 'blur(32px) saturate(140%)', border: '1px solid rgba(255,255,255,0.58)', boxShadow: '0 24px 70px rgba(38,66,88,0.09), inset 0 1px 0 rgba(255,255,255,0.70), inset 0 -1px 0 rgba(255,255,255,0.20)' }}>
       <div className="flex items-center justify-between mb-3">
         <h2 className="text-sm font-semibold" style={{ color: '#000000' }}>Consultas Públicas</h2>
         <div className="flex gap-1.5">

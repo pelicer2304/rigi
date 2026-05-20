@@ -4,7 +4,7 @@ const navItems = ['Dashboard', 'Processos', 'IFA Monitor', 'Tempos ANVISA', 'Med
 
 export default function TopBar() {
   return (
-    <div className="flex items-center justify-between px-6 py-3">
+    <div className="flex items-center justify-between px-4 py-2.5">
       {/* Logo */}
       <div className="flex items-center gap-2 flex-shrink-0">
         <div

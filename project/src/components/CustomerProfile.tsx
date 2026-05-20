@@ -11,7 +11,7 @@ const actionIcons = [
 
 export default function CustomerProfile() {
   return (
-    <div className="relative rounded-[28px] p-5 overflow-hidden" style={{ background: 'rgba(255,255,255,0.28)', backdropFilter: 'blur(22px)', border: '1px solid rgba(255,255,255,0.5)', boxShadow: '0 20px 60px rgba(31,41,55,0.08)' }}>
+    <div className="relative rounded-[22px] p-4 overflow-hidden glass-panel" style={{ background: 'rgba(255,255,255,0.30)', backdropFilter: 'blur(32px) saturate(140%)', border: '1px solid rgba(255,255,255,0.58)', boxShadow: '0 24px 70px rgba(38,66,88,0.09), inset 0 1px 0 rgba(255,255,255,0.70), inset 0 -1px 0 rgba(255,255,255,0.20)' }}>
       {/* Decorative glows */}
       <div className="absolute pointer-events-none" style={{ top: '10%', left: '50%', transform: 'translateX(-50%)', width: '220px', height: '220px', background: 'radial-gradient(circle, rgba(113,157,190,0.35), transparent 60%)', filter: 'blur(40px)', zIndex: 0 }} />
       <div className="absolute pointer-events-none" style={{ bottom: '-20px', right: '-20px', width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(192,212,226,0.40), transparent 65%)', filter: 'blur(50px)', zIndex: 0 }} />

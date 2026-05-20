@@ -1,3 +1,224 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background tokens */
+    --bg-base: linear-gradient(160deg, #E4EEF4 0%, #EDF2F6 35%, #F2F5F0 65%, #EEF3F7 100%);
+    --bg-radial-blue: radial-gradient(circle at 15% 20%, rgba(113,157,190,0.18), transparent 55%);
+    --bg-radial-warm: radial-gradient(circle at 85% 15%, rgba(220,225,210,0.20), transparent 50%);
+    --bg-radial-bottom: radial-gradient(circle at 50% 90%, rgba(113,157,190,0.12), transparent 50%);
+
+    /* Surface tokens */
+    --surface-glass: rgba(255,255,255,0.36);
+    --surface-glass-strong: rgba(255,255,255,0.52);
+    --surface-glass-subtle: rgba(255,255,255,0.28);
+    --surface-border: rgba(255,255,255,0.55);
+    --surface-border-subtle: rgba(255,255,255,0.42);
+    --surface-highlight: linear-gradient(180deg, rgba(255,255,255,0.65) 0%, transparent 30%);
+
+    /* Shadow tokens */
+    --shadow-soft: 0 8px 28px rgba(35,60,80,0.06), 0 2px 6px rgba(35,60,80,0.03);
+    --shadow-floating: 0 28px 80px rgba(35,60,80,0.11), inset 0 1px 0 rgba(255,255,255,0.65);
+    --shadow-elevated: 0 36px 90px rgba(35,60,80,0.13), 0 8px 24px rgba(35,60,80,0.05);
+
+    /* Blue glass */
+    --blue-glass: linear-gradient(135deg, rgba(55,95,230,0.88), rgba(125,155,242,0.66));
+    --blue-glass-border: rgba(255,255,255,0.32);
+
+    /* Teal glass */
+    --teal-glass: linear-gradient(135deg, rgba(70,150,162,0.82), rgba(170,218,220,0.58));
+    --teal-glass-border: rgba(255,255,255,0.34);
+
+    /* Dark glass */
+    --dark-glass: linear-gradient(135deg, rgba(13,15,18,0.94), rgba(48,53,58,0.88));
+    --dark-glass-border: rgba(255,255,255,0.16);
+
+    /* Yellow glass */
+    --yellow-glass: linear-gradient(135deg, rgba(226,233,48,0.84), rgba(245,248,125,0.62));
+    --yellow-glass-border: rgba(255,255,255,0.36);
+  }
+}
+
+@layer components {
+  /* Glass panel — main containers */
+  .glass-panel {
+    background: rgba(255,255,255,0.30);
+    backdrop-filter: blur(32px) saturate(140%);
+    -webkit-backdrop-filter: blur(32px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.58);
+    box-shadow: 0 24px 70px rgba(38,66,88,0.09), inset 0 1px 0 rgba(255,255,255,0.70), inset 0 -1px 0 rgba(255,255,255,0.20);
+    border-radius: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.26), rgba(255,255,255,0.04) 38%, rgba(255,255,255,0) 100%);
+  }
+
+  /* Glass card — inner cards */
+  .glass-card {
+    background: rgba(255,255,255,0.38);
+    backdrop-filter: blur(22px) saturate(130%);
+    -webkit-backdrop-filter: blur(22px) saturate(130%);
+    border: 1px solid rgba(255,255,255,0.52);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.62), 0 12px 28px rgba(40,65,85,0.05);
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.20), rgba(255,255,255,0.02) 30%, rgba(255,255,255,0) 100%);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  /* Colored glass cards */
+  .glass-blue {
+    background: var(--blue-glass);
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    border: 1px solid rgba(255,255,255,0.32);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.34), inset 0 -20px 40px rgba(255,255,255,0.06), 0 16px 38px rgba(55,95,230,0.16);
+  }
+
+  .glass-teal {
+    background: var(--teal-glass);
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    border: 1px solid rgba(255,255,255,0.34);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.34), inset 0 -20px 40px rgba(255,255,255,0.06), 0 16px 38px rgba(70,150,162,0.13);
+  }
+
+  .glass-dark {
+    background: var(--dark-glass);
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 18px 42px rgba(0,0,0,0.20);
+  }
+
+  .glass-yellow {
+    background: var(--yellow-glass);
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    border: 1px solid rgba(255,255,255,0.36);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.38), inset 0 -20px 40px rgba(255,255,255,0.08), 0 16px 34px rgba(180,185,38,0.13);
+  }
+
+  .glass-white {
+    background: rgba(255,255,255,0.38);
+    backdrop-filter: blur(22px) saturate(130%);
+    -webkit-backdrop-filter: blur(22px) saturate(130%);
+    border: 1px solid rgba(255,255,255,0.52);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.62), 0 12px 28px rgba(40,65,85,0.05);
+  }
+
+  /* Sidebar glass */
+  .glass-sidebar {
+    background: rgba(8,12,8,0.75);
+    backdrop-filter: blur(28px) saturate(140%);
+    -webkit-backdrop-filter: blur(28px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+}
+
+
+@layer utilities {
+  /* Typography contrast */
+  .text-strong {
+    color: rgba(14, 24, 34, 0.94);
+    font-weight: 700;
+  }
+
+  .text-medium {
+    color: rgba(50, 72, 88, 0.78);
+  }
+
+  .text-soft {
+    color: rgba(70, 92, 108, 0.62);
+  }
+
+  /* Card colored text enhancement */
+  .text-on-color {
+    color: rgba(255,255,255,0.96);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.10);
+  }
+
+  .text-on-color-sub {
+    color: rgba(255,255,255,0.72);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.06);
+  }
+
+  /* Urgent card — farol visual */
+  .urgent-card {
+    background: linear-gradient(135deg, rgba(13,15,18,0.96), rgba(42,46,50,0.90)) !important;
+    border: 1px solid rgba(229,235,64,0.48) !important;
+    box-shadow:
+      0 0 0 1px rgba(229,235,64,0.10),
+      0 18px 42px rgba(0,0,0,0.20),
+      0 0 32px rgba(229,235,64,0.18),
+      inset 0 1px 0 rgba(255,255,255,0.14) !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .urgent-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    bottom: 18px;
+    width: 4px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #f0f45a, #d9df26);
+    box-shadow: 0 0 18px rgba(229,235,64,0.55);
+  }
+
+  /* Urgent badge */
+  .urgent-badge {
+    background: rgba(229, 235, 64, 0.95);
+    color: rgba(15, 18, 20, 0.96);
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 11px;
+    box-shadow: 0 0 18px rgba(229,235,64,0.35);
+  }
+
+  /* Urgent pulse dot */
+  .urgent-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #e5eb40;
+    box-shadow: 0 0 0 4px rgba(229,235,64,0.14), 0 0 16px rgba(229,235,64,0.50);
+    animation: urgentPulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes urgentPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+      box-shadow: 0 0 0 4px rgba(229,235,64,0.14), 0 0 16px rgba(229,235,64,0.50);
+    }
+    50% {
+      transform: scale(1.12);
+      opacity: 0.85;
+      box-shadow: 0 0 0 8px rgba(229,235,64,0.08), 0 0 28px rgba(229,235,64,0.65);
+    }
+  }
+}

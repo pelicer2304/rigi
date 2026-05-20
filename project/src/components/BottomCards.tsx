@@ -3,11 +3,11 @@ import { MoreHorizontal, ArrowUpRight, TrendingUp, BarChart2, Package, Microscop
 
 // ── Shared card wrapper ───────────────────────────────────────────────────────
 const cardStyle: React.CSSProperties = {
-  background: 'rgba(255,255,255,0.28)',
-  backdropFilter: 'blur(22px)',
-  WebkitBackdropFilter: 'blur(22px)',
-  border: '1px solid rgba(255,255,255,0.45)',
-  boxShadow: '0 20px 60px rgba(31,41,55,0.08)',
+  background: 'rgba(255,255,255,0.30)',
+  backdropFilter: 'blur(32px) saturate(140%)',
+  WebkitBackdropFilter: 'blur(32px) saturate(140%)',
+  border: '1px solid rgba(255,255,255,0.58)',
+  boxShadow: '0 24px 70px rgba(38,66,88,0.09), inset 0 1px 0 rgba(255,255,255,0.70), inset 0 -1px 0 rgba(255,255,255,0.20)',
   overflow: 'hidden',
 };
 
@@ -230,7 +230,7 @@ function NoticiasAnvisa() {
     { title: "Nova indicação de medicamento para prevenção do HIV-1", date: "12 Jan 2026", cat: "Registro" },
   ];
 
-  const catColor: Record<string, string> = { Registro: '#719DBE', Regulatório: '#059669', RDC: '#D97706' };
+  const catColor: Record<string, string> = { Registro: '#719DBE', Regulatório: '#719DBE', RDC: '#D97706' };
 
   return (
     <div className="relative rounded-[28px] p-5 overflow-hidden flex-1" style={cardStyle}>
@@ -382,7 +382,7 @@ function PainelPfizer() {
               <div className="text-[9px]" style={{ color: '#9CA3AF' }}>{r.processo}</div>
             </div>
             <div className="text-right">
-              <span className="text-[9px] font-bold" style={{ color: r.status === 'Urgente' ? '#c53030' : r.status === 'Ok' ? '#059669' : '#D97706' }}>{r.status}</span>
+              <span className="text-[9px] font-bold" style={{ color: r.status === 'Urgente' ? '#D97706' : r.status === 'Ok' ? '#719DBE' : '#D97706' }}>{r.status}</span>
               <div className="text-[9px]" style={{ color: '#9CA3AF' }}>Exp: {r.exp}</div>
             </div>
           </div>
